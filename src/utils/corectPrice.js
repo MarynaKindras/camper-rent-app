@@ -1,1 +1,0 @@
-export const corectPrice = (price) => price.toString().concat(',00')
