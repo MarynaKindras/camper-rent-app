@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkcamper_rent_app=self.webpackChunkcamper_rent_app||[]).push([[350],{350:(e,a,p)=>{p.r(a),p.d(a,{default:()=>c});var r=p(579);const c=()=>(0,r.jsx)("h1",{children:"PageNotFound"})}}]);
-//# sourceMappingURL=350.57811e9e.chunk.js.map
