@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 
 export const BarApp = styled.div`
-  /* width: 360px; */
+  width: 360px;
 `;
 
 export const BarForm = styled.form`
-  width: 360px;
+  /* width: 360px; */
 `;
 
 export const BarInfo = styled.div`
   margin-bottom: 32px;
 `;
 
-export const BarName = styled.h2`
+export const BarName = styled.label`
   color: rgba(16, 24, 40, 0.6);
   font-size: 16px;
   font-style: normal;
@@ -54,6 +54,42 @@ export const BarLine = styled.div`
   margin-bottom: 24px;
 `;
 
+export const VehicleOptionsList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
+  margin-bottom: 32px;
+`;
+
+export const VehicleOptionsItem = styled.li``;
+
+export const OptionsLable = styled.label`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 110px;
+  height: 95px;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  border-radius: 10px;
+  border: 1px solid rgba(16, 24, 40, 0.2);
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  /* &:checked{
+    border: 1px solid red;
+    outline: 12px solid red;
+  } */
+`;
+
 export const Button = styled.button`
   display: inline-flex;
   padding: 16px 60px;
@@ -77,4 +113,24 @@ export const Button = styled.button`
   &:hover {
     background: #d84343;
   }
+`;
+
+export const InfoImg = styled.img`
+  width: 32px;
+  height: 32px;
+`;
+
+export const VehicleTypeList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
+  margin-bottom: 64px;
+`;
+
+export const TypeImg = styled.img`
+  width: 40px;
+  height: 28px;
 `;
