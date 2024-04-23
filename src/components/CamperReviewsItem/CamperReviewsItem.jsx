@@ -1,28 +1,29 @@
-import starReiting from "utils/starReiting";
+import ReactStars from 'react-rating-stars-component';
+import { ReviewInfo, ReviewAvatar, ReviewAvatarName, ReviewName, ReviewComment } from './CamperReviewsItem.module';
 
+const CamperReviewsItem = ({ review }) => {
+  const data = {
+    size: 20,
+    value: review.reviewer_rating,
+    edit: false,
+  };
 
-const CamperReviewsItem = ({review}) => {
-console.log('review', review)
-
-    return (
-      <li>
+  return (
+    <li>
+      <ReviewInfo>
+        <ReviewAvatar>
+          <ReviewAvatarName>{review.reviewer_name[0]}</ReviewAvatarName>
+        </ReviewAvatar>
         <div>
-          <div>
-            {/* <img src={review.} alt="" /> */}
-          </div>
-          <div>
-            <h2>{review.reviewer_name}</h2>
-            <span>{starReiting(review.reviewer_rating)}</span>
-            <span id="star"></span>
-            <span>{review.reviewer_rating}</span>
-          </div>
+          <ReviewName>{review.reviewer_name}</ReviewName>
+          <ReactStars {...data} />
         </div>
-        <div>
-          <p>{review.comment}</p>
-        </div>
-      </li>
-    );
-
-}
+      </ReviewInfo>
+      <div>
+        <ReviewComment>{review.comment}</ReviewComment>
+      </div>
+    </li>
+  );
+};
 
 export default CamperReviewsItem;

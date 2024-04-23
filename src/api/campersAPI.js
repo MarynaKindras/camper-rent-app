@@ -6,3 +6,8 @@ export const getCampers = async (page = 1) => {
   const data = await axios.get(`/advert/?page=${page}&limit=4`);
   return data;
 };
+
+export const getCampersAll = async () => {
+  const data = await axios.get(`/adverts/`);
+  return data;
+};
