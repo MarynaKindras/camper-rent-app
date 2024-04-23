@@ -1,23 +1,23 @@
 import styled from 'styled-components';
 
 export const BarApp = styled.div`
-  /* width: 360px; */
+  width: 360px;
 `;
 
 export const BarForm = styled.form`
-  width: 360px;
+  /* width: 360px; */
 `;
 
 export const BarInfo = styled.div`
   margin-bottom: 32px;
 `;
 
-export const BarName = styled.h2`
+export const BarName = styled.label`
   color: rgba(16, 24, 40, 0.6);
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
-  line-height: 24px; /* 150% */
+  line-height: 24px; 
 `;
 
 export const BarInput = styled.input`
@@ -35,17 +35,15 @@ export const BarInput = styled.input`
 export const BarNameFilter = styled.h2`
   color: rgba(16, 24, 40, 0.6);
   font-size: 16px;
-  font-style: normal;
   font-weight: 500;
-  line-height: 24px; /* 150% */
+  line-height: 24px; /
   margin-bottom: 14px;
 `;
 
 export const NameFilter = styled.p`
   font-size: 20px;
-  font-style: normal;
   font-weight: 600;
-  line-height: 24px; /* 120% */
+  line-height: 24px; 
   margin-bottom: 24px;
 `;
 
@@ -54,27 +52,77 @@ export const BarLine = styled.div`
   margin-bottom: 24px;
 `;
 
-export const Button = styled.button`
-  display: inline-flex;
-  padding: 16px 60px;
+export const VehicleOptionsList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
+  margin-bottom: 32px;
+`;
+
+
+export const InfoImg = styled.img`
+  width: 32px;
+  height: 32px;
+`;
+
+export const VehicleTypeList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
+  margin-bottom: 64px;
+`;
+
+export const TypeImg = styled.img`
+  width: 40px;
+  height: 28px;
+`;
+
+export const CheckboxWrapper = styled.label`
+  display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-
-  border-radius: 200px;
-  background: #e44848;
-
-  color: #fff;
-  /* font-family: Inter; */
+  flex-direction: column;
+  width: 110px;
+  height: 95px;
+  gap: 8px;
   font-size: 16px;
-  font-style: normal;
   font-weight: 500;
-  line-height: 24px; /* 150% */
-  letter-spacing: -0.08px;
-  border: none;
-  outline: none;
+  line-height: 1.4;
+  border-radius: 10px;
+  border: 1px solid ${({ checked }) => (checked ? '#E44848' : '#cfd1d4')};
+
+  display: inline-block;
+  cursor: pointer;
+  font-size: 16px;
+`;
+
+export const CheckboxInput = styled.input`
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+`;
+
+export const CheckboxCheckmark = styled.span`
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  width: 110px;
+  height: 95px;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  border-radius: 10px;
+  border: 1px solid ${({ checked }) => (checked ? '#E44848' : '#cfd1d4')};
 
   &:hover {
-    background: #d84343;
   }
 `;

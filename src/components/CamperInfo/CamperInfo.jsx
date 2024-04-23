@@ -1,15 +1,19 @@
+import { useState } from 'react';
 import CamperFeatures from 'components/CamperFeatures/CamperFeatures';
 import CamperReviewsList from 'components/CamperReviewsList/CamperReviewsList';
 import BookNow from 'components/BookNow/BookNow';
 import { corectPrice } from 'utils/corectPrice';
-import CloseImg from '../../images/close.svg';
-import MapImg from '../../images/map.svg';
+
+import { ReactComponent as Close } from '../../images/close.svg';
+import { ReactComponent as Star } from '../../images/star.svg';
+import { ReactComponent as Map } from '../../images/map.svg';
 
 import {
   ModalWrapper,
   NameWrapper,
   RatingWrapper,
   Rating,
+  Location,
   PriceWrapper,
   Price,
   GalleryListWrapper,
@@ -24,35 +28,30 @@ import {
   InfoListItem,
   InfoItemBtn,
   BarLine,
-  MorInfoWrapper
+  MorInfoWrapper,
 } from './CamperInfo.styled';
-import { useState } from 'react';
 
 const CamperInfo = ({ data, onClose }) => {
-
   const [isFeatures, setIsFeatures] = useState(true);
 
   const { name, price, rating, location, description, gallery, reviews } = data;
-
-
-
- 
 
   return (
     <ModalWrapper>
       <NameWrapper>
         <p>{name}</p>
-        <img src={CloseImg} alt="Close" onClick={() => onClose()} />
+        <Close onClick={() => onClose()} />
       </NameWrapper>
 
       <RatingWrapper>
         <Rating>
+          <Star />
           {rating} ({reviews.length} Reviews)
         </Rating>
-        <span>
-          <img src={MapImg} alt="Maps" />
+        <Location>
+          <Map />
           {location}
-        </span>
+        </Location>
       </RatingWrapper>
 
       <PriceWrapper>
@@ -78,10 +77,10 @@ const CamperInfo = ({ data, onClose }) => {
 
       <InfoWrapper>
         <InfoList>
-          <InfoListItem>
+          <InfoListItem style={isFeatures ? { borderBottom: '5px solid #E44848' } : { borderBottom: 'none' }}>
             <InfoItemBtn onClick={() => setIsFeatures(true)}>Features</InfoItemBtn>
           </InfoListItem>
-          <InfoListItem>
+          <InfoListItem style={!isFeatures ? { borderBottom: '5px solid #E44848' } : { borderBottom: 'none' }}>
             <InfoItemBtn onClick={() => setIsFeatures(false)}>Reviews</InfoItemBtn>
           </InfoListItem>
         </InfoList>
@@ -90,20 +89,10 @@ const CamperInfo = ({ data, onClose }) => {
       <BarLine></BarLine>
 
       <MorInfoWrapper>
-        {isFeatures ? <CamperFeatures/> : <CamperReviewsList reviews={reviews} />}
+        {isFeatures ? <CamperFeatures data={data} /> : <CamperReviewsList reviews={reviews} />}
         <BookNow />
       </MorInfoWrapper>
-
-
-
-     
-
-          
-
-
     </ModalWrapper>
-
-    
   );
 };
 
