@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcamper_rent_app=self.webpackChunkcamper_rent_app||[]).push([[436],{436:(e,p,a)=>{a.r(p),a.d(p,{default:()=>c});var r=a(579);const c=()=>(0,r.jsx)("h1",{children:"Like"})}}]);
+//# sourceMappingURL=436.4be05f8f.chunk.js.map
