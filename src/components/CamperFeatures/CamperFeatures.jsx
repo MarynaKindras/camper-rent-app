@@ -1,4 +1,4 @@
-import { ifDetails } from 'utils/ifDetails';
+import { renderIfDetails } from 'utils/ifDetails';
 import { corectDetails } from 'utils/corectDetails';
 import { upperText } from 'utils/upperText';
 
@@ -8,15 +8,19 @@ import { ReactComponent as Benz } from '../../images/benz.svg';
 import { ReactComponent as Kitchen } from '../../images/kitchen.svg';
 import { ReactComponent as Beds } from '../../images/beds.svg';
 import { ReactComponent as Vind } from '../../images/vind.svg';
-import { ReactComponent as Air } from '../../images/air.svg';
+import { ReactComponent as Gas } from '../../images/gas.svg';
+import { ReactComponent as Microwave } from '../../images/microwave.svg';
+import { ReactComponent as Toilet } from '../../images/toilet.svg';
+import { ReactComponent as Water } from '../../images/water.svg';
 import { ReactComponent as Cd } from '../../images/cd.svg';
 import { ReactComponent as Hob } from '../../images/hob.svg';
+import { ReactComponent as TV } from '../../images/tv.svg';
+import { ReactComponent as Freezer } from '../../images/freezer.svg';
 import { ReactComponent as Radio } from '../../images/radio.svg';
 
 import {
   InfoWrapper,
   InfoList,
-  InfoItem,
   InfoTitle,
   BarLine,
   DetailsList,
@@ -30,77 +34,29 @@ const CamperFeatures = ({ data }) => {
   return (
     <InfoWrapper>
       <InfoList>
-        {ifDetails(adults) && (
-          <InfoItem>
-            <Adult />
-            {adults} adults
-          </InfoItem>
+        {renderIfDetails(adults, <Adult style={{ marginRight: '8px' }} />, `${adults} adults`)}
+        {renderIfDetails(transmission, <Transmision style={{ marginRight: '8px' }} />, transmission)}
+        {renderIfDetails(engine, <Benz style={{ marginRight: '8px' }} />, engine)}
+        {renderIfDetails(details.kitchen, <Kitchen style={{ marginRight: '8px' }} />, details.kitchen && 'kitchen')}
+        {renderIfDetails(details.beds, <Beds style={{ marginRight: '8px' }} />, `${details.beds} beds`)}
+        {renderIfDetails(
+          details.airConditioner,
+          <Vind style={{ marginRight: '8px' }} />,
+          details.airConditioner && 'ac'
         )}
-
-        {ifDetails(transmission) && (
-          <InfoItem>
-            <Transmision style={{ marginRight: '8px' }} />
-            {transmission}
-          </InfoItem>
+        {renderIfDetails(details.gas, <Gas style={{ marginRight: '8px' }} />, `gas ${details.gas}`)}
+        {renderIfDetails(
+          details.microwave,
+          <Microwave style={{ marginRight: '8px' }} />,
+          details.microwave && 'microwave'
         )}
-
-        {ifDetails(details.airConditioner) && (
-          <InfoItem>
-            <Vind />
-            {details.airConditioner && 'AC'}
-          </InfoItem>
-        )}
-
-        {ifDetails(engine) && (
-          <InfoItem>
-            <Benz />
-            {engine}
-          </InfoItem>
-        )}
-
-        {ifDetails(details.kitchen) && (
-          <InfoItem>
-            <Kitchen />
-            {details.kitchen && 'Kitchen'}
-          </InfoItem>
-        )}
-
-        {ifDetails(details.beds) && (
-          <InfoItem>
-            <Beds style={{ marginRight: '8px' }} />
-            {details.beds} beds
-          </InfoItem>
-        )}
-
-        {ifDetails(details.airConditioner) && (
-          <InfoItem>
-            <Air />
-            {details.airConditioner}
-            <p>air conditioner</p>
-          </InfoItem>
-        )}
-
-        {ifDetails(details.CD) && (
-          <InfoItem>
-            <Cd />
-            <p>CD</p>
-          </InfoItem>
-        )}
-
-        {ifDetails(details.radio) && (
-          <InfoItem>
-            <Radio />
-            <p>Radio</p>
-          </InfoItem>
-        )}
-
-        {ifDetails(details.hob) && (
-          <InfoItem>
-            <Hob style={{ marginRight: '8px' }} />
-            {details.hob}
-            <p>Hob</p>
-          </InfoItem>
-        )}
+        {renderIfDetails(details.toilet, <Toilet style={{ marginRight: '8px' }} />, details.toilet && 'toilet')}
+        {renderIfDetails(details.water, <Water style={{ marginRight: '8px' }} />, `water ${details.water}`)}
+        {renderIfDetails(details.CD, <Cd style={{ marginRight: '8px' }} />, details.CD && 'cd')}
+        {renderIfDetails(details.freezer, <Hob style={{ marginRight: '8px' }} />, `${details.freezer} hob`)}
+        {renderIfDetails(details.TV, <TV style={{ marginRight: '8px' }} />, details.TV && 'tv')}
+        {renderIfDetails(details.freezer, <Freezer style={{ marginRight: '8px' }} />, details.freezer && 'treezer')}
+        {renderIfDetails(details.radio, <Radio style={{ marginRight: '8px' }} />, details.radio && 'radio')}
       </InfoList>
 
       <InfoTitle>Vehicle details</InfoTitle>

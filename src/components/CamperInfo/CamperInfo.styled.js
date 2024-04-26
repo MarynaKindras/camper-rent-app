@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { ReactComponent as Map } from '../../images/map.svg';
+import { ReactComponent as Close } from '../../images/close.svg';
 
 export const ModalWrapper = styled.div`
   background-color: #fff;
@@ -36,7 +38,7 @@ export const NameWrapper = styled.div`
   color: #101828;
   font-size: 24px;
   font-weight: 600;
-  line-height: 30px; 
+  line-height: 30px;
 
   margin-bottom: 10px;
 `;
@@ -52,7 +54,7 @@ export const Rating = styled.span`
   display: flex;
   gap: 5px;
   font-size: 16px;
-  line-height: 24px; 
+  line-height: 24px;
   text-decoration-line: underline;
 `;
 
@@ -72,7 +74,7 @@ export const Price = styled.p`
   color: #101828;
   font-size: 24px;
   font-weight: 600;
-  line-height: 30px; 
+  line-height: 30px;
 `;
 
 export const GalleryListWrapper = styled.div`
@@ -128,7 +130,7 @@ export const InfoItemBtn = styled.button`
   color: #101828;
   font-size: 20px;
   font-weight: 600;
-  line-height: 24px; /* 120% */
+  line-height: 24px;
 `;
 
 export const BarLine = styled.div`
@@ -139,4 +141,16 @@ export const BarLine = styled.div`
 export const MorInfoWrapper = styled.div`
   display: flex;
   gap: 24px;
+`;
+
+export const Maps = styled(Map)`
+  stroke: #101828;
+`;
+
+export const BtnClose = styled(Close)`
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  stroke: #101828;
+  &:hover {
+    stroke: #e44848;
+  }
 `;

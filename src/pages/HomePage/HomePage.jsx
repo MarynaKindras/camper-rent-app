@@ -1,8 +1,8 @@
 import { InfoWrapper, InfoImg, InfoImages, InfoTitle } from './HomePage.module';
 
-import camper1 from '../../images/Van-gif.gif';
-import camper2 from '../../images/giphy.gif';
-import camper3 from '../../images/giphy (1).gif';
+import camper1 from '../../images/Van-gif-1.gif';
+import camper2 from '../../images/Van-gif-2.gif';
+import camper3 from '../../images/Van-gif-3.gif';
 
 const HomePage = () => {
   return (

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import { useDispatch } from 'react-redux';
 import MainButton from 'components/MainButton/MainButton';
 
 import {
@@ -14,8 +13,6 @@ import {
 } from './BookNow.styled';
 
 const BookNow = () => {
-  //   const dispatch = useDispatch();
-
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -30,7 +27,6 @@ const BookNow = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    // dispatch(formData)
     console.log(formData);
   };
 
