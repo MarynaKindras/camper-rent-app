@@ -7,8 +7,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-/* Reset Styles */
-
 h1,
 h2,
 h3,
@@ -36,4 +34,9 @@ a {
 
 .active {
   border-bottom: 2px solid #e44848;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
 }
