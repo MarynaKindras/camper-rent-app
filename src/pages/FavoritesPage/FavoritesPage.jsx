@@ -5,6 +5,7 @@ import { selectFavorites } from 'store/selectors';
 import FiltersBar from 'components/FiltersBar/FiltersBar';
 import CatalogList from 'components/CatalogList/CatalogList';
 import { Modal } from 'components/Modal/Modal';
+import NoInform from 'components/NoInform/NoInform';
 
 import { CatalogPageWrapper, ListWrapper } from './FavoritesPage.module';
 
@@ -24,7 +25,11 @@ const FavoritesPage = () => {
       <CatalogPageWrapper>
         <FiltersBar />
         <ListWrapper>
-          <CatalogList campers={favorites} toggleModal={toggleModal} />
+          {favorites.length !== 0 ? (
+            <CatalogList campers={favorites} toggleModal={toggleModal} />
+          ) : (
+            <NoInform text="No favorites" />
+          )}
         </ListWrapper>
       </CatalogPageWrapper>
       {showModal && <Modal onClose={toggleModal} campers={selectedCamper} />}
